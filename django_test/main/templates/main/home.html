@@ -1,0 +1,71 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <section class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-light">Добро пожаловать в <span class="text-warning">Bear</span></h1>
+        <p class="lead text-secondary">Мы делаем современные и удобные решения для вас</p>
+        <a href="" class="btn btn-warning btn-lg mt-3">Узнать больше</a>
+    </section>
+
+    <section class="row text-center mb-5">
+        <div class="col-md-4">
+            <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+            <h4 class="text-light">Скорость</h4>
+            <p class="text-secondary">Наши продукты работают максимально быстро и без сбоев.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-lock fa-3x text-warning mb-3"></i>
+            <h4 class="text-light">Безопасность</h4>
+            <p class="text-secondary">Мы уделяем особое внимание вашей безопасности и данным.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-users fa-3x text-warning mb-3"></i>
+            <h4 class="text-light">Команда</h4>
+            <p class="text-secondary">Профессионалы в разных областях работают вместе ради вас.</p>
+        </div>
+    </section>
+
+    <section class="row mb-5">
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Наши услуги</h5>
+                    <p class="card-text">Мы предлагаем широкий спектр услуг: дизайн, разработка и поддержка.</p>
+                    <a href="" class="btn btn-outline-warning">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Проекты</h5>
+                    <p class="card-text">Посмотрите наши реализованные проекты и вдохновитесь.</p>
+                    <a href="" class="btn btn-outline-warning">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Контакты</h5>
+                    <p class="card-text">Свяжитесь с нами и получите бесплатную консультацию.</p>
+                    <a href="" class="btn btn-outline-warning">Связаться</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <h2 class="text-light">Готовы начать?</h2>
+        <p class="text-secondary">Присоединяйтесь к нам и почувствуйте разницу уже сегодня.</p>
+        <a href="" class="btn btn-warning btn-lg">Начать</a>
+    </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    О нас
+{% endblock %}
+
+{% block content %}
+    <h1>О нас</h1>
+    <p>Это страница "О нас". Здесь вы можете узнать больше о нашей компании.</p>
+    <button>
+        <a href="{% url 'home' %}">Перейти на главную страницу</a>
+    </button>
+{% endblock %}
