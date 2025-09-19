@@ -1,0 +1,34 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Новости
+{% endblock %}
+
+{% block content %}
+    <div class="center-content">
+        <img src="{% static 'main/img/not-work.jpg' %}" 
+            alt="Картинка" 
+            class="center-image"
+            oncontextmenu="return false;" 
+            ondragstart="return false;" 
+            onmousedown="return false;">
+    </div>
+
+    <style>
+        .center-content {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .center-image {
+            max-width: 90%;
+            margin-bottom: 20px;
+            pointer-events: none; /* отключает любые действия мышкой */
+            user-select: none;    /* нельзя выделить */
+        }
+    </style>
+{% endblock %}
+
+<!-- 10 минута -->
+
