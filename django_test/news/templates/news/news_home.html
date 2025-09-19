@@ -6,28 +6,18 @@
 {% endblock %}
 
 {% block content %}
-    <div class="center-content">
-        <img src="{% static 'main/img/not-work.jpg' %}" 
-            alt="Картинка" 
-            class="center-image"
-            oncontextmenu="return false;" 
-            ondragstart="return false;" 
-            onmousedown="return false;">
+    <h1 class="news-title">Новости</h1>
+    <div class="news-container">
+        {% for item in news %}
+            <div class="news-item">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.content }}</p>
+                <p class="news-date">📅 {{ item.published_date }}</p>
+            </div>
+        {% empty %}
+            <p class="no-news">Новостей нет.</p>
+        {% endfor %}
     </div>
-
-    <style>
-        .center-content {
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .center-image {
-            max-width: 90%;
-            margin-bottom: 20px;
-            pointer-events: none; /* отключает любые действия мышкой */
-            user-select: none;    /* нельзя выделить */
-        }
-    </style>
 {% endblock %}
 
 <!-- 10 минута -->
