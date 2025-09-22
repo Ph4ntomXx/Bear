@@ -1,0 +1,18 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %}`
+    Новости
+{% endblock %}
+
+{% block content %}
+<h1 class="news-title">{{ news_item.title }}</h1>
+<div class="news-container">
+    <div class="news-item">
+        <h2>{{ news_item.title }}</h2>
+        <p>{{ news_item.content }}</p>
+        <p class="news-date">📅 {{ news_item.published_date }}</p>
+    </div>
+
+</div>
+{% endblock %}

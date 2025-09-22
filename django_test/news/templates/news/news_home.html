@@ -13,6 +13,7 @@
                 <h2>{{ item.title }}</h2>
                 <p>{{ item.content }}</p>
                 <p class="news-date">📅 {{ item.published_date }}</p>
+                <a href="{% url 'news_detail' item.id %}" class="read-more">Читать далее...</a>
             </div>
         {% empty %}
             <p class="no-news">Новостей нет.</p>
