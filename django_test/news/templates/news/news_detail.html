@@ -6,13 +6,17 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="news-title">{{ news_item.title }}</h1>
-<div class="news-container">
-    <div class="news-item">
-        <h2>{{ news_item.title }}</h2>
-        <p>{{ news_item.content }}</p>
-        <p class="news-date">📅 {{ news_item.published_date }}</p>
+<div class="article-container">
+    <h1 class="article-title">{{ news_item.title }}</h1>
+    <p class="article-date">📅 {{ news_item.published_date }}</p>
+    <div class="article-content">
+        {{ news_item.content }}
     </div>
 
+    <div class="article-actions">
+        <a href="{% url 'news_update' news_item.id %}" class="btn btn-edit">✏️ Изменить</a>
+        <a href="{% url 'news_delete' news_item.id %}" class="btn btn-delete">🗑 Удалить</a>
+        <a href="{% url 'news_home' %}" class="btn btn-back">⬅ Назад</a>
+    </div>
 </div>
 {% endblock %}

@@ -9,12 +9,13 @@
     <h1 class="news-title">Новости</h1>
     <div class="news-container">
         {% for item in news %}
-            <div class="news-item">
-                <h2>{{ item.title }}</h2>
-                <p>{{ item.content }}</p>
-                <p class="news-date">📅 {{ item.published_date }}</p>
-                <a href="{% url 'news_detail' item.id %}" class="read-more">Читать далее...</a>
-            </div>
+            <a href="{% url 'news_detail' item.id %}" class="news-item-link">
+                <div class="news-item">
+                    <h2>{{ item.title }}</h2>
+                    <p>{{ item.content }}</p>
+                    <p class="news-date">📅 {{ item.published_date }}</p>
+                </div>
+            </a>
         {% empty %}
             <p class="no-news">Новостей нет.</p>
         {% endfor %}

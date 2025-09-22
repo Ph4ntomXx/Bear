@@ -1,0 +1,17 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Удаление новости
+{% endblock %}
+
+{% block content %}
+    <h1 class="news-title">Удаление новости</h1>
+    <div class="news-container">
+        <form method="post">
+            {% csrf_token %}
+            <p>Вы уверены, что хотите удалить новость "{{ object.title }}"?</p>
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+    </div>
+{% endblock %}
