@@ -13,26 +13,25 @@
 </head>
 
 <body>
+    {% if user.is_authenticated %}
     <aside>
         <img src="{% static 'main/img/logo-test.svg' %}" alt="Логотип" class="logo-img">
         <span class="logo-text">Bear</span>
         <h3>Навигация</h3>
-    <ul>
-        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i><span> Главная</span></a></li>
-        <li><a href="{% url 'about' %}"><i class="fas fa-address-card"></i><span> О нас</span></a></li>
-        <li><a href="/"><i class="fas fa-paper-plane"></i><span> Контакты</span></a></li>
-        <li><a href="{% url 'news_home' %}"><i class="fas fa-address-card"></i><span>Новости</span></a></li>
-        <li><a href="{% url 'create_news' %}"><i class="fas fa-plus-circle"></i><span>Добавить новость</span></a></li>
-    </ul>
-
-
+        <ul>
+            <li><a href="{% url 'home' %}"><i class="fas fa-home"></i><span> Главная</span></a></li>
+            <li><a href="{% url 'about' %}"><i class="fas fa-address-card"></i><span> О нас</span></a></li>
+            <li><a href="/"><i class="fas fa-paper-plane"></i><span> Контакты</span></a></li>
+            <li><a href="{% url 'news_home' %}"><i class="fas fa-newspaper"></i><span> Новости</span></a></li>
+            <li><a href="{% url 'create_news' %}"><i class="fas fa-plus-circle"></i><span> Добавить новость</span></a></li>
+            <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span> Выйти ({{ user.username }})</span></a></li>
+        </ul>
     </aside>
-
+    {% endif %}
 
     <main>
         {% block content %}
         {% endblock %}
     </main>
 </body>
-
 </html>
