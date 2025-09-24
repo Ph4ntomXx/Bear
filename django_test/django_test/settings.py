@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
+    "tracking",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +45,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "tracking.middleware.VisitorTrackingMiddleware",
+    "main.middleware.SaveVisitorMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,3 +133,45 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ----------------------
+JAZZMIN_SETTINGS = {
+    "site_title": "Bear Admin",
+    "site_header": "Bear Dashboard",
+    "site_logo": "main/img/logo-test.svg",  # если есть логотип 
+    "welcome_sign": "Добро пожаловать, администратор",
+    "copyright": "© 2025 Bear",
+    "show_ui_builder": False,
+
+    # Иконки для моделей
+    "default_icon": "fas fa-circle",
+    "icons": {
+        "auth.user": "fas fa-user",
+        "news.news": "fas fa-newspaper",
+        "main": "fas fa-home",
+    },
+
+    # Формат форм
+    "change_form_format": "horizontal_tabs",
+    "change_list_filter_sidebar": True,
+}
+
+# ----------------------
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",  # одна из готовых Bootswatch тем
+    "dark_mode_theme": "darkly",
+
+    "navbar": "navbar-dark bg-dark",
+    "footer_fixed": True,
+    "body_small_text": False,
+
+    # Кастомные цвета
+    "button_classes": {
+        "primary": "btn btn-warning text-dark",  # жёлтые кнопки
+    },
+
+    "accent": "accent-warning",
+    "sidebar": "sidebar-dark-warning",
+    "sidebar_nav_small_text": False,
+}
