@@ -10,6 +10,6 @@
 Открой терминал в корне проекта и выполни:
 
 ```bash
-docker build -t my-django-site .
+docker-compose up --build
 ```
 
