@@ -5,9 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <h1>О нас</h1>
-    <p>Это страница "О нас". Здесь вы можете узнать больше о нашей компании.</p>
-    <button>
-        <a href="{% url 'home' %}">Перейти на главную страницу</a>
-    </button>
+<div class="container py-5">
+
+    <section class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-light ">О нас</h1>
+        <p class="lead text-secondary">Это страница "О нас". Здесь вы можете узнать больше о нашей компании.</p>
+        <a href="{% url 'home' %}" class="btn btn-warning btn-lg mt-3">Перейти на главную страницу</a>
+    </section>
+</div>
 {% endblock %}
