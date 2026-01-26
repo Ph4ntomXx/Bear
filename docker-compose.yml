@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: django_bear_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./django_test:/app
+      - static_content:/app/staticfiles  # Склад для статики внутри контейнера
+    env_file:
+      - django_test/.env
+    command: gunicorn --bind 0.0.0.0:8000 django_test.wsgi:application
+
+volumes:
+  static_content:   # Объявляем наш склад официально
