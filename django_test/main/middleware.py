@@ -6,7 +6,7 @@ class SaveVisitorMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        if request.path.startswith("/admin/") is False:  # не считаем админку
+        if request.path.startswith("/admin/") is False:
             Visit.objects.create(
                 ip=request.META.get("REMOTE_ADDR"),
                 user_agent=request.META.get("HTTP_USER_AGENT", ""),
