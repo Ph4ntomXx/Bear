@@ -1,21 +1,18 @@
-name: Django Docker Check
+name: Django Docker Deploy
 
 on:
   push:
     branches: [ "master", "main" ]
-  pull_request:
-    branches: [ "master", "main" ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -t my-app-test .
-
-      - name: Run Docker Container
-        run: docker run -d -p 8000:8000 my-app-test
+      - name: Build and Restart Docker
+        run: |
+          # Эта команда сама найдет твой docker-compose.yml и обновит проект
+          docker compose up -d --build
