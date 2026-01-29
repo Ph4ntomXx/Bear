@@ -13,4 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build and Restart Docker
-        run: docker-compose up -d --build
+        run: |
+          cp /home/vboxuser/django_bear.env django_test/.env
+          docker-compose up -d --build
