@@ -14,5 +14,4 @@ jobs:
 
       - name: Build and Restart Docker
         run: |
-          # Эта команда сама найдет твой docker-compose.yml и обновит проект
           docker compose up -d --build
